@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %} Home | {{block.super}} {% endblock %}
+
+{% block content %}
+	<div class="card" style="min-height:100px;padding: 20px">
+		<div class="row mx-auto mt-3">
+			<h3 style="color:black">Select Stream</h3>
+		</div>
+		<hr>
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:gray;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			<ul>
+				<li>
+					<p>This <a href="{% url 'subject:select-stream' %}">select stream</a> feature provide by this website is to find your courses after the O/l results out, to ensure which courses might get if your selected particular three subjects for A/l.</p>
+				</li>
+				<li>
+					<p>This feature help students to start thier A/l career with knowing the university courses provided by University Grant Commision for thier selected subjects for A/l.</p>
+				</li>
+				<li>
+					<p>You are given 3 lists to choose three subjects, then reults is university courses you may get for your selected subjects.</p>
+				</li>
+				<li>
+					<p>Better to start your A/l career after the O/l by knowing higher studies according to your subject preference</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+<div class="container" style="width: 200px">
+	{% for s in stream %}
+		<div class="card row mr-auto ml-auto" style="text-align: center;background: #F5F7FA">
+			<a href="{% url 'stream:list' stream=s.stream %}">{{s.stream.capitalize}}</a>
+		</div>
+		
+	{% endfor %}
+	<hr>
+</div>

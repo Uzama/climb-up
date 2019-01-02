@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Home | {{block.super}} {% endblock %}
+
+{% block content %}
+	<div class="card" style="min-height:100px;padding: 20px">
+		<div class="row mx-auto mt-3">
+			<h3 style="color:black">Find Courses</h3>
+		</div>
+		<hr>
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:gray;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			<ul>
+				<li>
+					<p>This <a href="{% url 'course:find' %}">find courses</a> feature provide by this website is to find your courses after the A/l results out, to ensure which courses might get for your A/l result.</p>
+				</li>
+				<li>
+					<p>We use last year Z-score for predicting the courses. So the result might change according to the cuttoff which realeased by University Grant Commision.</p>
+				</li>
+				<li>
+					<p>The result showing you based on A/l result, O/l result, Z-score, Gk reult, and your district. </p>
+				</li>
+				<li>
+					<p>This feature hleps you to find your university eligible courses before you apply for University Grand Commision</p>
+				</li>
+				<li>
+					<p>If you are feel our prediction is wrong or showing wrong result, let us know through official facebook page.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

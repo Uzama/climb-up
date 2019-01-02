@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %} {{object.name}} | {{block.super}} {% endblock %}
+{% load static %}
+{% block content %}
+	<div class="row">
+		<div class="card col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto mr-auto" style="min-height: 340px;padding:10px;margin-top:5px">
+		<!-- university detail -->
+			<div class="row">
+				<div class="col-6 mx-auto mb-3 col-sm-3 col-md-4 col-lg-3 col-xl-3 ml-auto">
+					<div class="card ml-auto" >
+						<img src="{% static object.logo %}" style="max-height:150px;max-width: 140px">
+					</div>
+				</div>
+				<div class="col-12 mx-auto col-sm-9 col-md-8 col-lg-9 col-xl-9 ml-auto">
+					<h4 style="color: #0470EC;font-weight: bold;">{{object.name}}</h4> 
+					<h4><small>{{object.city}}, {{object.district}}</small></h4>
+					<h5><small>motto: "{{object.moto}}"</small></h5>
+					<h5><small>tele-phone: {{object.phone}}</small></h5>
+					<h5><small>Website: <a href="{{object.website}}">{{object.website}}</a></small></h5>
+				</div>
+			</div>
+			<hr>
+			<div class="row">	
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto mr-auto">
+					<p>{{object.discription}}</p>
+				</div>
+			</div>
+			<div class="row" style="padding: 10px">
+				<div class="card col-12 col-sm-3 col-md-4 col-lg-3 col-xl-2 ml-auto">
+					<a href="{{object.facebook}}" style="text-align: center;">Facebook</a>
+				</div>
+				<div class="card col-12 col-sm-3 col-md-4 col-lg-3 col-xl-2">
+					<a href="{{object.linkedin}}" style="text-align: center;">LinkedIn</a>
+				</div>
+				<div class="card col-12 col-sm-3 col-md-4 col-lg-3 col-xl-2 mr-auto">
+					<a href="{{object.location}}" style="text-align: center;">Direction</a>
+				</div>
+			</div>
+		</div>
+	</div><hr>
+	<div class="row">
+		<div class="card col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" style="min-height:350px;padding:10px;margin-top:5px">
+			<div class="row ml-auto mr-auto" style="margin-bottom: 20px">
+				<h5>Courses offered by <b style="color:#0470EC">{{object.name}}</b></h5>
+			</div>
+			<div class="row">
+				<div class="col-sm-10 col-md-11 col-lg-8 col-xl-7 ml-auto">
+					<form class="form-inline my-2 my-lg-0" method="GET"> 
+				      <input class="form-control mr-sm-2" type="search" placeholder="Course Name" aria-label="Search" style="border-radius: 20px;height: 30px;max-width: 180px;margin-right: 5px" name="search">
+				      <button type="submit" style="height:30px;background:#0470EC;color: white;border:1px solid #0470EC;border-radius:5px; ">Search</button>
+				    </form>
+			    </div>
+			</div><hr>
+			<div class="row mr-auto ml-auto"> 
+				<h6 style="color:#0470EC;">Results: {{course.count}} Courses</h6>
+			</div>
+			<div class="row" style="overflow-x: scroll;max-height:350px">
+				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12">
+					{% for c in course%}
+						{% include 'universities/snippits/course.html' with course=c university_add=True %}
+					{% empty %}
+						<div class="col-12 mr-auto ml-auto">
+							<p style="text-align: center;">Not Found</p>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock content %}
+

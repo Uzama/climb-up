@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %} Home | {{block.super}} {% endblock %}
+
+{% block content %}
+	<div class="card" style="min-height:100px;padding: 20px">
+		<div class="row mx-auto mt-3">
+			<h3 style="color:black">Courses?</h3>
+		</div>
+		<hr>
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:gray;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			<ul>
+				<li>
+					<p>We have listed out all university <a href="{% url 'course:list' %}">courses</a> in our website to make students to find courses easily.</p>
+				</li>
+				<li>
+					<p>We also provide courses under each streams in A/l to easily differ courses from streams to streams.</p>
+				</li>
+				<li>
+					<p>Under each university we provided in our website, courses are list down.</p>
+				</li>
+				<li>
+					<p>Also courses can search according to your A/l subject, we are provided this feature call <a href="{% url 'subject:select-stream' %}">select stream.</a></p>
+				</li>
+				<li>
+					<p>Also you can search courses based on A/l result, O/l result and many more, we are provided this feature call <a href="{% url 'course:find' %}">find courses.</a></p>
+				</li>
+				<li>
+					<p>We are encurage you to give innovative ideas to improve this section.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

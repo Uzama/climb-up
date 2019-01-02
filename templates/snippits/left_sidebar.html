@@ -1,0 +1,44 @@
+<div class="sidenav">
+	<div class="row">
+		<a class="nav-link dropdown-toggle" href="{% url 'university:list' %}" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" style="color: #0470EC;">
+          Universities
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="opacity:0.95;background: #F5F7FA">
+          {% include 'snippits/university.html' with university=university %}
+        </div>
+	</div>
+	<div class="row">
+		<a class="nav-link" href="{% url 'course:list' %}" style="color: #0470EC;">
+          Courses
+    </a>
+	</div>		
+	<div class="row">
+		<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="false" aria-expanded="false" style="color: #0470EC;">
+          Streams
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="opacity:0.95;background: #F5F7FA">
+          {% include 'snippits/stream.html' with stream=stream %}
+        </div>	
+	</div>	
+  <div class="card row" style=";margin-bottom: 5px">
+    <a class="nav-link" href="{% url 'course:find' %}" style="color: #0470EC">
+         Find Courses (<b>After A/L</b>)
+    </a>
+  </div> 
+  <div class="card row">
+    <a class="nav-link" href="{% url 'subject:select-stream' %}" style="color: #0470EC;">
+         Select Stream (<b>After O/L</b>)
+    </a>
+  </div>  
+	<hr>
+	<div class="row">
+		<a class="nav-link" href="{% url 'main:about' %}" id="navbarDropdown" role="button" aria-haspopup="false" aria-expanded="false" style="color: #0470EC;">
+          About Us
+        </a>
+	</div>	<div class="row">
+		<a class="nav-link" href="{% url 'main:contact' %}" id="navbarDropdown" role="button" aria-haspopup="false" aria-expanded="false" style="color: #0470EC;">
+          Contact Us
+        </a>	
+	</div>	
+</div>
+

@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block title %} Home | {{block.super}} {% endblock %}
+{% load static %}
+{% block content %}
+	<div class="row" style="padding: 20px;background-repeat: no-repeat;background-size:700px 1000px;">
+		<div class="row mr-auto ml-auto mt-3 " style="color:black">
+			<h1 style="text-align: center;margin-bottom: 20px;font-weight: bold">Welcome to <img src="{% static 'climbup2.png' %}" style="width: 140px;height: 40px">.com</h1>
+		</div> 
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:#0470EC;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			This website is for students of Sri Lanka who are serching for higher studies in Sri Lankan State universities. Find Your Degree which offered by state universities all around Sri Lanka. The website provide robust search feature thus you can find your courses based on your Advanced Level and Ordinary Level Results. Go through help sections to get more details about this website
+		</div>
+		<div class="row mx-auto" style="margin-top: 30px;margin-bottom: 50px">
+			<a class="card shadow-sm col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 " style="background: #0470EC;border:1px solid white;min-width: 120px;color: white;text-align: center;" href="{% url 'university:list' %}">University</a>
+			
+			<a class="card shadow-sm col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="background: #0470EC;border:1px solid white;min-width: 120px;color: white;text-align: center;" href="{% url 'course:list' %}">Courses</a>
+			
+			<a class="card shadow-sm col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4" style="background: #0470EC;border:1px solid white;min-width: 120px;color: white;text-align: center;" href="{% url 'stream:list' stream='maths' %}">Streames</a><hr>
+		</div>
+		<div class="card col-7 mr-auto ml-auto shadow-sm" style="background:#f8f9f9;opacity: 0.8;font-weight: bold">
+			<div class="raw">
+			<div class="row">
+			    <h6 class="nav-link" style="color: black;font-weight: bold;font-size: 17px">
+			          Help & FAQ
+			    </h6>
+		  	</div>
+			<div class="row">
+				<a class="nav-link" href="{% url 'main:find-course' %}" style="color: #0470EC;">
+		          Find Courses?
+		    	</a>
+			</div>	
+		  	<div class="row">
+			    <a class="nav-link" href="{% url 'main:select-stream' %}" style="color: #0470EC;">
+			          Select Stream?
+			    </a>
+		  	</div>  	
+		  	<div class="row">
+			    <a class="nav-link" href="{% url 'main:university-help' %}" style="color: #0470EC;">
+			          Universities?
+			    </a>
+		  	</div> 
+		  	<div class="row">
+			    <a class="nav-link" href="{% url 'main:stream-help' %}" style="color: #0470EC;">
+			          Streams?
+			    </a>
+		  	</div>
+		  	<div class="row">
+			    <a class="nav-link" href="{% url 'main:course-help' %}" style="color: #0470EC;">
+			          Courses?
+			    </a>
+		 	 </div> 
+		  	<div class="row">
+			    <a class="nav-link" href="{% url 'main:resource' %}" style="color: #0470EC;">
+			          Resources
+			    </a>
+		  	</div>  
+		  	<div class="row">
+			    <a class="nav-link" href="{% url 'main:search-result' %}" style="color: #0470EC;">
+			          Search Results
+			    </a>
+		 	</div> 
+		</div> 
+		</div>
+		<!-- -->
+	</div>
+{% endblock %}

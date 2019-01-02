@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %} Home | {{block.super}} {% endblock %}
+
+{% block content %}
+	<div class="card" style="min-height:100px;padding: 20px">
+		<div class="row mx-auto mt-3">
+			<h3 style="color:black">About Us</h3>
+		</div>
+		<hr>
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:gray;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			<ul>
+				<li>
+					<p>This is an Education website which provide all the university courses at state univerities in Sri Lanka.</p>
+				</li>
+				<li>
+					<p>We are collect informations from official university guide book which realeased every your by University Grant Commision.</p>
+				</li>
+				<li>
+					<p>Often, we update our informations according to every year university guide book.</p>
+				</li>
+				<li>
+					<p>We are very happy to accept any kind of faults in our wesite or information.</p>
+				</li>
+				<li>
+					<p>We are welcome your innovative ideas to improve our website with more features to serve the people with zero cost.</p>
+				</li>
+				<li>
+					<p>We are always looking your feedback through our official facebook page. Please visit <a href="{% url 'main:contact' %}">contact us</a> page to get the link to our facebook page. </p>
+				</li>
+				<li>
+					<p>Staty tuned with our facebook page to get to know new updates on our website.</p>
+				</li>
+				<li>
+					<p>We advancely apologize if any wrong information provided through our website and we encurage you to notify about that.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

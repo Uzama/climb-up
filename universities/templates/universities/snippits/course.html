@@ -1,0 +1,78 @@
+<div class="card shadow-sm rounded" style="padding:5px;margin-bottom:5px">
+	<div class="row">
+		<div class="col-sm-12 mt-1 col-md-12 col-lg-12 col-xl-7 ml-auto" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+			<a href="" data-target="#{{course.slug}}" data-toggle="modal" ><h6 style="color:#0470EC;font-size:15px" ><b><span class=" align-middle d-inline-block ml-2" tabindex="0" data-toggle="tooltip" title="{{course.course_name}}">{{course.course_name}}</span></b></h6></a>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-5">
+			<div class="row mx-auto">
+				<div class="card col-sm-6 col-md-6 col-lg-6 col-xl-7 ml-xl-auto mr-xl-2">
+					<b class="lead" style="font-size: 12px;font-weight: bold;text-align: center;">Intake: {{course.student_count}}</b>
+				</div>
+				<div class="card col-sm-6 col-md-6 col-lg-6 col-xl-7 ml-xl-auto mr-xl-2">
+					<b style="color:#0470EC;font-size: 12px;font-weight: bold;text-align: center;">Apitude Exam: {% if course.apitude_exam %}<small>Yes</small>{% else %}<small>No</small>{% endif%}</b>
+				</div>
+			</div>
+		</div>
+	</div> 
+	<div class="row mr-auto">
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-lg-4 ml-xl-5">
+			<h6 class="lead" style="font-size: 13px;font-weight: bold;">Name of Degree: {{course.degree_name}}</h6>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-lg-4 ml-xl-5">
+			<h6 class="lead" style="font-size: 13px;font-weight: bold;">Language: {{course.language}}</h6>
+		</div>
+		<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-lg-4 ml-xl-5">
+			<h6 class="lead" style="font-size: 13px;font-weight: bold;">Period: {{course.period}} years</h6>
+		</div>
+		{% if not university_add %}
+			<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-lg-4 ml-xl-5">
+			<h6 class="lead" style="font-size: 12px;font-weight: bold;">Offered by <b style="color:#0470EC; ">{{course.university.name}}</b></h6>
+		</div>
+		{% endif %}
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="{{course.slug}}" aria-hidden="true" style="opacity: 0.9;" >
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="height:400px;width:600px">
+      <div class="modal-header" >
+        <div class="row">
+			<div class="col-12 ml-auto">
+				<a href="" data-target="#exampleModalCenter" data-toggle="modal"><h6 style="color:#0470EC "><b>{{course.course_name}}</b></h6></a>
+				<div class="row ml-auto mr-auto">
+					<div class="card"  style="padding: 5px">
+						<b class="lead" style="font-size: 12px;font-weight: bold;">Intake: {{course.student_count}}</b>
+					</div>
+					<div class="card" style="padding: 5px">
+						<b style="color:#0470EC;font-size: 12px;font-weight: bold;">Apitude Exam: {% if course.apitude_exam %}<small>Yes</small>{% else %}<small>No</small>{% endif%}</b>
+					</div>
+				</div>
+			</div>
+		</div>
+      </div>
+      <div class="modal-body" >
+        <div class="row mr-auto" style="margin-left: 20px">
+			<div class="col-12">
+				<h6 class="lead" style="font-size: 13px;font-weight: bold;">Name of Degree: {{course.degree_name}}</h6>
+			</div>
+			<div class="col-12">
+				<h6 class="lead" style="font-size: 13px;font-weight: bold;">Language: {{course.language}}</h6>
+			</div>
+			<div class="col-12">
+				<h6 class="lead" style="font-size: 13px;font-weight: bold;">Period: {{course.period}} years</h6>
+			</div>
+			<div class="col-12">
+				<h6 class="lead" style="font-size: 12px;font-weight: bold;">Offered by <b style="color:#0470EC; ">{{course.university.name}}</b></h6>
+			</div>
+		</div>
+		<div class="row mr-auto" style="margin-left: 20px">
+      		<p class="lead" style="font-size: 13px; font-weight: bold">{{course.discription}}</p>
+      	</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

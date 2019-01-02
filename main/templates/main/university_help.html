@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %} Home | {{block.super}} {% endblock %}
+
+{% block content %}
+	<div class="card" style="min-height:100px;padding: 20px">
+		<div class="row mx-auto mt-3">
+			<h3 style="color:black">Universities?</h3>
+		</div>
+		<hr>
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:gray;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			<ul>
+				<li>
+					<p>We are only list out the state <a href="{% url 'university:list' %}">universities</a> and courses in those universities in Sri Lanka to make people life easier when they search thier career in state universities.</p>
+				</li>
+				<li>
+					<p>Up to now we only proveded states <a href="{% url 'university:list' %}">universities</a> and <a href="{% url 'course:list' %}">courses</a>, in near future we are hopping to provide colleges, intitutions and private sectors. We are welcome your suggesions too.</p>
+				</li>
+				<li>
+					<p>You can see each university in a single page with additional information such as links to website, facebook, linkedin, phonenumber and many more information.</p>
+				</li>
+				<li>
+					<p>Also we have provided all courses specific to each university in particular university page.</p>
+				</li>
+				<li>
+					<p>We are kindly ask you to message us any mistake or lack of information occured in our website.</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

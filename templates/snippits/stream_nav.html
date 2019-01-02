@@ -1,0 +1,15 @@
+<div class="row mr-auto ml-auto" style="width:900px">
+	{% for s in stream %}
+		<div class="col-3 ml-auto mr-auto" style="width: 200px;height: 300px;overflow-x: scroll;">
+			<h6 style="color: #0470EC"><a href="{% url 'stream:list' stream=s.stream %}">{{s.stream.capitalize}}</a></h6>
+			<div class="card ml-auto" style="text-align: center;overflow-y: scroll;max-width: 200px">
+				{% for course in s.course_set.all %}
+					<p class="lead" style="font-size: 13px;">{{course.course_name}}</p>
+
+				{% empty %}
+					<p class="lead" style="font-size: 13px">Not Found</p>
+				{% endfor %}
+			</div>
+		</div>	
+	{% endfor %}	
+</div>

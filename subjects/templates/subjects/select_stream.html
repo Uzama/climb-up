@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %} Universities | {{block.super}} {% endblock %}
+
+{% block content %}
+	<div class="card row" style="padding: 20px">
+		<div class="row mr-auto ml-auto">
+			<h3 class="lead" style="font-weight: bold;color:#0470EC;margin-bottom: 10px ">Select three Subjects</h3> 
+		</div>
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:gray;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			You have to select three main subjects to start your advanced level career. you can select three subjects from given below link.you will get university courses based on your selection
+		</div>
+		<form>
+			<div class="row mr-auto ml-auto">
+				<div class="col-7 mx-auto col-sm-4 col-md-7 col-lg-4 col-xl-4 mt-2">
+					{% include 'courses/snippits/subject.html' with name='subject1' subject=al %}
+				</div>
+				<div class="col-7 mx-auto col-sm-4 col-md-7 col-lg-4 col-xl-4 mt-2">
+					{% include 'courses/snippits/subject.html' with name='subject2' subject=al %}
+				</div>
+				<div class="col-7 mx-auto col-sm-4 col-md-7 col-lg-4 col-xl-4 mt-2">
+					{% include 'courses/snippits/subject.html' with name='subject3' subject=al %}
+				</div>
+				<div class="col-6 mx-auto mt-4 col-sm-2 mx-sm-auto col-md-6 col-lg-2 col-xl-2">
+					<button class="btn btn-primary" type="submit" style="max-width: 200px;max-height: 50px;text-align:center;">Search</button>
+				</div>
+			</div> 
+		</form>
+	</div><hr>	
+	<div class="card row" style="min-height: 200px;padding: 10px">
+		<div class="row mr-auto ml-auto">
+			<h6 style="text-align: center;color: #0470EC;margin-bottom: 20px">Courses, you can apply based on selected three subjects</h6>
+		</div>
+		<!-- <div class="row ml-auto mr-auto">
+			<form class="form-inline">
+				<div class="col-12 col-sm-5 mx-auto col-md-12 col-lg-5 col-xl-5 mr-auto">
+					<div class="row">
+						<div class="col-4 ml-auto col-sm-6 mr-sm-auto ml-md-auto col-md-1 col-lg-6 col-xl-6">
+							{% include 'courses/snippits/university.html' with university=university name='university' %}
+						</div>
+						<div class="col-4 mr-auto col-sm-6 ml-sm-auto mr-md-auto col-md-6 col-lg-6 col-xl-6">
+							{% include 'courses/snippits/stream.html' with stream=stream name='stream' %}
+						</div>
+					</div>
+				</div>
+				<div class="row mt-3 col-sm-7 mt-sm-0 col-md-10 mt-md-3 mt-lg-0 col-lg-7 col-xl-7 mr-auto">
+				    <input class="form-control ml-auto" type="search" placeholder="Course Name" aria-label="Search" style="border-radius: 5px;height: 30px;max-width: 180px;margin-right: 5px" name="search">
+				    <button type="submit" style="height: 30px;background:#0470EC;color: white;border:1px solid #0470EC;border-radius: 5px;">Search</button>
+		    	</div >
+		     </form>
+		</div> -->
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:gray;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			The result only consider the selected subjects. It does not mean you can select like this in A/L too. Thus, if you selected above three subjects, then you can apply for below courses based on your A/L result
+		</div>
+		<hr>
+		<div class="row mr-auto ml-auto"> 
+			<h6 style="color:#0470EC;">Results: {{object_list.count}} Courses</h6>
+		</div>
+		<div class="row" style="overflow-x: scroll;max-height:350px ">
+			{% for course in object_list%}
+				<div class="col-12">
+					{% include 'universities/snippits/course.html' with course=course %}
+				</div>
+			{% empty %}
+				<div class="col-12 mr-auto ml-auto">
+					<p style="text-align: center;">Not Found</p>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock content %}

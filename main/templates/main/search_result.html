@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Home | {{block.super}} {% endblock %}
+
+{% block content %}
+	<div class="card" style="min-height:100px;padding: 20px">
+		<div class="row mx-auto mt-3">
+			<h3 style="color:black">Search Results</h3>
+		</div>
+		<hr>
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:gray;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			<ul>
+				<li>
+					<p>We are provided search features under some pages to quickly find specfic results. We provide search features in University list page, Each University pages to find courses related to particular university, Stream page to find specfic courses. </p>
+				</li>
+				<li>
+					<p>Search results based on sometimes university name, sometimes it chnage. Exact dependency given by place holder in search box. Also it is in case sensitive. Also it check given search letters contain by result</p>
+				</li>
+				<li>
+					<p>In future we will improve robustness and speed to give reliable results. </p>
+				</li>
+			</ul>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,64 @@
+{% load static %}
+<div class="card shadow-sm p-3 bg-white rounded col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto mr-auto" style="min-height: 160px;padding: 10px 25px;margin-top: 10px">
+  <div class="row">
+    <div class="col-4 col-sm-3 col-md-4 col-lg-3 col-xl-3" >
+      <div class="card col-12 h-50 mr-auto ml-auto col-sm-8 col-md-9 col-lg-10 col-xl-8 mr-auto " style="max-height: 100px;max-width: 100px;margin-bottom: 20px;">
+
+         <img src="{% static university.logo %}" style="max-height: 100px;max-width: 100px;min-width: 20px;min-height: 20px">
+
+      </div>
+      <div class="row mr-auto ml-0.5 mx-sm-auto mx-xl-auto">
+        <div class="col-1  col-sm-1 col-md-3 col-lg-3 col-xl-3 mb-0.3">
+            <a href="{{university.facebook}}"><img src="{% static 'facebook.jpg' %}" style="max-width: 20px;max-height: 20px;min-width: 11px;min-height: 11px"></a>
+        </div>
+        <div class="col-1 col-sm-1 col-md-3 col-lg-3 col-xl-3">
+            <a href="{{university.linkedin}}"><img src="{% static 'linkedin.png' %}" style="width: 20px;height: 20px;"></a>
+        </div>
+        <div class="col-1 col-sm-1 col-md-3 col-lg-3 col-xl-3 ">
+            <a href="{{university.location}}"><img src="{% static 'location.png' %}" style="width: 20px;height: 20px;"></a>
+        </div>
+      </div>
+    </div>
+    <div class="col-8 mr-auto ml-auto col-sm-9 col-md-8 col-lg-9 col-xl-9 mr-auto">
+      <div class="row">
+        <a href="{% url 'university:detail' slug=university.slug %}" data-target="#{{course.slug}}">
+          <h6 style="color:#0470EC;" >
+            <b><span class="d-inline-block mr-2" tabindex="0" data-toggle="tooltip" title="{{university.name}}">{{university.name}}</span></b>
+          </h6>
+        </a>
+        <h6><small>{{university.city}}, {{university.district}}</small></h6> 
+      </div>
+      <div class="row mr-auto">
+        <b class="lead" style="font-size: 13.5px;margin-bottom: 5px">{{university.discription}}</b>
+      </div>
+      <div class="row">
+        <b class="lead" style="font-size: 13px;font-weight: bold;padding: 3px 0px"><i>Motto : "{{university.moto}}"</i></b>
+      </div>
+      <div class="row">
+        <a class="lead" href="{{university.website}}" style="font-size: 13px;font-weight: bold;color: gray"><i>Website : {{university.website}}</i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- 
+
+
+<div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div> -->

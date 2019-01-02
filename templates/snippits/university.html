@@ -1,0 +1,20 @@
+{% load static %}
+<div class="container" style="width: 300px;margin-bottom: 10px">
+	{% for uni in university %}
+		<div class="row" style="padding: 0px 3px">
+			<div class="col-1 mr-4">
+				<img src="{% static uni.logo %}" style="width: 30px;height: 30px;padding-right: 3px">
+			</div>
+			<div>
+				<a href="{% url 'university:detail' slug=uni.slug %}" style="font-size: 13px">{{uni.name}}</a>
+			</div> 
+		</div>
+		<br>
+	{% endfor %}
+	<hr>
+	<a href="{% url 'university:list' %}">
+		<div class="card ml-auto mr-auto" style="text-align: center;background:#0470EC;color: white">
+			 <p style="margin-top: 5px;">All Universities</p>
+		</div>
+	</a>
+</div>

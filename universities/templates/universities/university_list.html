@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Universities | {{block.super}} {% endblock %}
+
+{% block content %}
+	<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto mr-auto" style="margin-bottom: 20px;color:#0470EC ">
+		<h2 style="text-align: center;">Universities</h2>
+	</div>
+	<div class="row">
+		<div class="col-12 col-sm-10 col-md-11 col-lg-8 col-xl-7 ml-auto">
+			<form class="form-inline my-2 my-lg-0">
+		      <input class="form-control mr-sm-2" type="search" placeholder="University name, District" aria-label="Search" style="border-radius: 20px;height: 30px;max-width: 180px;margin-right: 5px" name="search">
+		      <button type="submit" style="height: 30px;background:#0470EC;color: white;border:1px solid #0470EC;border-radius: 5px; ">Search</button>
+		    </form>
+	    </div>
+	</div><hr>
+	<div class="row mr-auto ml-auto"> 
+		<h6 style="color:#0470EC;">Results: {{object_list.count}} Universities</h6>
+	</div>
+	<div class="row" style="overflow-x: scroll;max-height:600px">
+		<!-- university list -->
+		{% for university in object_list %}
+			{% include 'universities/snippits/university.html' with university=university %}
+		{% empty %}
+			<div class="col-sm-12 col-md-2 col-lg-2 col-xl-2 ml-auto mr-auto">
+				<p style="text-align: center;">Not Found</p>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock content %}

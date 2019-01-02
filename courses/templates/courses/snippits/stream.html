@@ -1,0 +1,8 @@
+<select style="background:#0470EC;color: white;border:1px solid  #0470EC;height: 30px;max-width: 100px" name="{{name}}">
+	<option value="">Stream</option>
+	{% if stream %}
+		{% for s in stream %}
+			<option value="{{s.stream}}">{{s.stream.capitalize}}</option>
+		{% endfor %}
+	{% endif %}
+</select>

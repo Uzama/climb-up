@@ -1,0 +1,145 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Courses | {{block.super}} {% endblock %}
+
+{% block content %}
+	<div class="card row" style="min-height: 400px;padding: 20px;margin-bottom: 5px">
+		<form>
+			<input type="hidden" name="form1">
+			<div class="row ml-auto mr-auto">
+				<div class="card col-12 col-sm-10 mx-sm-auto col-md-11 col-lg-11 col-xl-6" style="min-height: 200px;padding: 10px">
+					<h6 style="text-align: center;color:#0470EC">A/L Result</h6>
+					<hr>
+					<div class="row">
+						<div class="col-6">
+							<p style="text-align: center;">Subject</p>
+						</div>
+						<div class="col-6">
+							<p style="text-align: center;">Result</p>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-6" style="text-align: center;">
+							{% include 'courses/snippits/subject.html' with name='subject1' subject=al %}
+							
+						</div>
+						<div class="col-6" style="text-align: center;">
+							{% include 'courses/snippits/result.html' with name='subject1_result'%}
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-6" style="text-align: center;">
+							{% include 'courses/snippits/subject.html' with name='subject2' subject=al %}
+						</div>
+						<div class="col-6" style="text-align: center;">
+							{% include 'courses/snippits/result.html' with name='subject2_result'%}
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-6" style="text-align: center;">
+							{% include 'courses/snippits/subject.html' with name='subject3' subject=al %}
+						</div>
+						<div class="col-6" style="text-align: center;">
+							{% include 'courses/snippits/result.html' with name='subject3_result'%}
+						</div>	
+					</div>
+				</div>
+				<div class="card col-12 col-sm-10 mx-sm-auto col-md-11 col-lg-11 col-xl-6 ml-auto" style="height:200px;padding:10px">
+					<h6 style="text-align: center;color:#0470EC">O/L Result</h6><hr>
+					<div class="row">
+						<div class="col-6">
+							<p style="text-align: center;">Subject</p>
+						</div>
+						<div class="col-6">
+							<p style="text-align: center;">Result</p>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-6" style="text-align: center;">
+							<b>Maths : </b>
+						</div>
+						<div class="col-6" style="text-align: center;">
+							{% include 'courses/snippits/result.html' with name='subject4_result'%}
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-6" style="text-align: center;">
+							<b>English : </b>
+						</div>
+						<div class="col-6" style="text-align: center;">
+							{% include 'courses/snippits/result.html' with name='subject5_result'%}
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-6" style="text-align: center;">
+							<b>Science : </b>
+						</div>
+						<div class="col-6" style="text-align: center;">
+							{% include 'courses/snippits/result.html' with name='subject6_result'%}
+						</div>	
+					</div>
+				</div>
+			</div>
+			<div class="card row ml-auto mr-auto col-sm-10 mx-sm-auto" style="height: 150px;padding: 10px">
+				<div class="col-12 col-sm-10 col-md-11 col-lg-8 col-xl-5 mr-auto" style="padding: 5px;text-align: center;">
+					<div class="row ml-auto mr-auto" style="margin: 5px">
+						<label style="margin-right: 10px">GK Result : </label>
+						<input type="number" name="gk_result" required="True" class="form-control" style="width: 100px"></input>
+					</div>
+					<div class="row ml-auto mr-auto" style="margin: 5px">
+						<label style="margin-right: 30px">District : </label>
+						{% include 'courses/snippits/district.html' with name='district' %}
+					</div>
+					<div class="row ml-auto mr-auto" style="margin: 5px">
+						<label style="margin-right: 25px">Z-score : </label>
+						<input type="number" name="zscore" required="True" class="form-control" style="width: 100px" step="0.0001"></input>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 mt-3 col-sm-2 mx-sm-auto col-md-4 col-lg-2 col-xl-2">
+				<button class="btn btn-primary" type="submit" style="max-width: 200px;max-height: 50px;text-align:center;">Search</button>
+			</div>
+		</form>
+	</div>
+	<div class="card row" style="min-height: 200px;padding: 10px">
+		<div class="row mr-auto ml-auto">
+			<h4 style="text-align: center;color: #0470EC;margin-bottom: 30px">Courses, You can apply</h4>
+		</div>
+		<!-- <div class="row ml-auto mr-auto">
+			<form class="form-inline">
+				<div class="col-12 col-sm-5 mx-auto col-md-12 col-lg-5 col-xl-5 mr-auto">
+					<div class="row">
+						<div class="col-4 ml-auto col-sm-6 mr-sm-auto ml-md-auto col-md-1 col-lg-6 col-xl-6">
+							{% include 'courses/snippits/university.html' with university=university name='university' %}
+						</div>
+						<div class="col-4 mr-auto col-sm-6 ml-sm-auto mr-md-auto col-md-6 col-lg-6 col-xl-6">
+							{% include 'courses/snippits/stream.html' with stream=stream name='stream' %}
+						</div>
+					</div>
+				</div>
+				<div class="row mt-3 col-sm-7 mt-sm-0 col-md-10 mt-md-3 mt-lg-0 col-lg-7 col-xl-7 mr-auto">
+				    <input class="form-control ml-auto" type="search" placeholder="Search" aria-label="Search" style="border-radius:5px;height:30px;margin-right: 5px;max-width: 180px" name="search">
+				    <button type="submit" style="height: 30px;background:#0470EC;color: white;border:1px solid #0470EC;border-radius: 5px; ">Search</button>
+		    	</div>
+		     </form>
+		</div> -->
+		<div class="card row mr-auto ml-auto mb-3 shadow-sm" style="font-size: 16px;color:gray;opacity: 0.8;background:#f8f9f9;padding: 10px">
+			The results showing you by consider the A/l result, O/l result, Gk result, Your Z-score, and Your district. We used last year Z-score for prediction. It might change in coming year Z-score. 
+		</div>
+		<hr>
+		<div class="row mr-auto ml-auto"> 
+			<h6 style="color:#0470EC;">Results: {{object_list.count}} Courses</h6>
+		</div>
+		<div class="row" style="overflow-x: scroll;max-height:350px">
+			{% for c in object_list%}
+				<div class="col-12">
+					{% include 'universities/snippits/course.html' with course=c %}
+				</div>
+			{% empty %}
+				<div class="col-12 mr-auto ml-auto">
+					<p style="text-align: center;">Not Found</p>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock content %}
