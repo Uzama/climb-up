@@ -25,7 +25,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'dog0&y(zy&j7y6^3ph=c@%!%^cj(7h^gdmj@j
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['climbup.herokuapp.com/home', '.climbup.com']
+ALLOWED_HOSTS = ['climbup.herokuapp.com', '.climbup.com']
 
 
 # Application definition
