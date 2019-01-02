@@ -1,7 +1,7 @@
 {% load static %}
-<div class="card shadow-sm p-3 bg-white rounded col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto mr-auto" style="min-height: 160px;padding: 10px 25px;margin-top: 10px">
-  <div class="row">
-    <div class="col-4 col-sm-3 col-md-4 col-lg-3 col-xl-3" >
+<div class="card shadow-sm  rounded col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto mr-auto" style="min-height: 160px;margin-top: 10px">
+  <div class="row" style="padding: 15px 20px;">
+    <!-- <div class="col-4 col-sm-3 col-md-4 col-lg-3 col-xl-3" >
       <div class="card col-12 h-50 mr-auto ml-auto col-sm-8 col-md-9 col-lg-10 col-xl-8 mr-auto " style="max-height: 100px;max-width: 100px;margin-bottom: 20px;">
 
          <img src="{% static university.logo %}" style="max-height: 100px;max-width: 100px;min-width: 20px;min-height: 20px">
@@ -18,8 +18,8 @@
             <a href="{{university.location}}"><img src="{% static 'location.png' %}" style="width: 20px;height: 20px;"></a>
         </div>
       </div>
-    </div>
-    <div class="col-8 mr-auto ml-auto col-sm-9 col-md-8 col-lg-9 col-xl-9 mr-auto">
+    </div> -->
+    <div class="col-12 mr-auto ml-auto col-sm-12 col-md-12 col-lg-12 col-xl-12 mr-auto">
       <div class="row">
         <a href="{% url 'university:detail' slug=university.slug %}" data-target="#{{course.slug}}">
           <h6 style="color:#0470EC;" >

@@ -16,7 +16,7 @@ class University(models.Model):
 	discription		= models.TextField()
 	timstamp		= models.DateTimeField(auto_now_add=True)
 	updated			= models.DateTimeField(auto_now=True)
-	logo			= models.ImageField(upload_to='logo', max_length=200, blank=True)
+	# logo			= models.ImageField(upload_to='logo', max_length=200, blank=True)
 	slug			= models.SlugField(unique=True, blank=True)
 
 	def __str__(self):

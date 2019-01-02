@@ -4,26 +4,26 @@
 {% load static %}
 {% block content %}
 	<div class="row">
-		<div class="card col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto mr-auto" style="min-height: 340px;padding:10px;margin-top:5px">
+		<div class="card col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto mr-auto" style="min-height: 300px;padding:10px;margin-top:5px">
 		<!-- university detail -->
 			<div class="row">
-				<div class="col-6 mx-auto mb-3 col-sm-3 col-md-4 col-lg-3 col-xl-3 ml-auto">
+				<!-- <div class="col-6 mx-auto mb-3 col-sm-3 col-md-4 col-lg-3 col-xl-3 ml-auto">
 					<div class="card ml-auto" >
 						<img src="{% static object.logo %}" style="max-height:150px;max-width: 140px">
 					</div>
-				</div>
-				<div class="col-12 mx-auto col-sm-9 col-md-8 col-lg-9 col-xl-9 ml-auto">
-					<h4 style="color: #0470EC;font-weight: bold;">{{object.name}}</h4> 
-					<h4><small>{{object.city}}, {{object.district}}</small></h4>
-					<h5><small>motto: "{{object.moto}}"</small></h5>
-					<h5><small>tele-phone: {{object.phone}}</small></h5>
-					<h5><small>Website: <a href="{{object.website}}">{{object.website}}</a></small></h5>
+				</div> -->
+				<div class="col-12 mx-auto col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto" style="text-align: center;">
+					<h5 style="color: #0470EC;font-weight: bold;">{{object.name}}</h5> 
+					<h5><small>{{object.city}}, {{object.district}}</small></h5>
+					<h6><small>motto: "{{object.moto}}"</small></h6>
+					<h6><small>tele-phone: {{object.phone}}</small></h6>
+					<h6><small>Website: <a href="{{object.website}}">{{object.website}}</a></small></h6>
 				</div>
 			</div>
 			<hr>
 			<div class="row">	
 				<div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 ml-auto mr-auto">
-					<p>{{object.discription}}</p>
+					<h6><small>{{object.discription}}</small></h6>
 				</div>
 			</div>
 			<div class="row" style="padding: 10px">
