@@ -8,6 +8,7 @@ class Stream(models.Model):
 			('arts','arts'),
 			('btech','bio_technology'),
 			('etech','engineering_technology'),
+			('ict','ict'),
 			('others','others'),
 		))
 
