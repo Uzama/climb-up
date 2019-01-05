@@ -47,7 +47,7 @@ class Course(models.Model):
 	discription				= models.TextField()
 
 	def __str__(self):
-		return self.course_name
+		return self.course_name + ' - ' + self.university.name
 
 	@property
 	def title(self):
@@ -59,7 +59,7 @@ class Requirement(models.Model):
 	zscore					= models.DecimalField(max_digits=5, default=0, decimal_places=4, blank=True)
 
 	def __str__(self):
-		return self.course.course_name + ' - ' + self.district
+		return self.course.__str__() + ' - ' + self.district
 
 def university_pre_save_reciver(sender, instance, *args, **kwargs):
 	if not instance.slug:

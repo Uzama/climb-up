@@ -126,9 +126,9 @@ class CourseListView(ListView):
 				else:
 					queryset = Course.objects.filter(
 						Q(course_name__iexact=search_result)| 
-						Q(course_name__icontains=search_result)|
-						Q(university__name=university)|
-						Q(stream__stream=stream)
+						Q(course_name__icontains=search_result)&
+						(Q(university__name=university)|
+						Q(stream__stream=stream))
 						)
 			else:
 				if university and stream:
