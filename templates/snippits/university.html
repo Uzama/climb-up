@@ -1,7 +1,7 @@
 {% load static %}
 <div class="container" style="width: 270px;">
 	{% for uni in university %}
-		<div class="row" style="padding: 0px 10px">
+		<div class="row" style="padding: 3px 10px">
 			<!-- <div class="col-1 mr-4">
 				<img src="{% static uni.logo %}" style="width: 30px;height: 30px;padding-right: 3px">
 			</div> -->
@@ -9,7 +9,6 @@
 				<a href="{% url 'university:detail' slug=uni.slug %}" style="font-size: 14px">{{uni.name}}</a>
 			</div> 
 		</div>
-		<br>
 	{% endfor %}
 	<hr>
 	<a href="{% url 'university:list' %}">
