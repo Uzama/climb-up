@@ -15,6 +15,34 @@ RESULTS = (
 	('W', 'W'),
 	)
 
+DISTRICT = (
+	('Ampara', 'Ampara'),
+	('Anuradhepura', 'Anuradhepura'),
+	('Batticloa', 'Batticloa'),
+	('Badullah', 'Badullah'),
+	('Colombo', 'Colombo'),
+	('Kandy', 'Kandy'),
+	('Jaffna', 'Jaffna'),
+	('Kegalle', 'Kegalle'),
+	('Gampaha', 'Gampaha'),
+	('kilinochi', 'kilinochi'),
+	('Mullaithivu', 'Mullaithivu'),
+	('Trincomeli', 'Trincomeli'),
+	('Mannar', 'Mannar'),
+	('Polannaruwa', 'Polannaruwa'),
+	('Puttalam', 'Puttalam'),
+	('Galle', 'Galle'),
+	('Matara', 'Matara'),
+	('Hambandhota', 'Hambandhota'),
+	('Kalutara', 'Kalutara'),
+	('Monaragale', 'Monaragale'),
+	('Kurunegale', 'Kurunegale'),
+	('Nuwareliya', 'Nuwareliya'),
+	('Matale', 'Matale'),
+	('Ratnapura', 'Ratnapura'),
+	('Vavniya', 'Vavniya')
+	)
+
 class Course(models.Model):
 	course_name				= models.CharField(max_length=200)
 	slug					= models.SlugField(blank=True)
@@ -55,7 +83,7 @@ class Course(models.Model):
 
 class Requirement(models.Model):
 	course 					= models.ForeignKey(Course)
-	district				= models.CharField(max_length=200, blank=True)
+	district				= models.CharField(max_length=200, blank=True, choices=DISTRICT)
 	zscore					= models.DecimalField(max_digits=5, default=0, decimal_places=4, blank=True)
 
 	def __str__(self):
